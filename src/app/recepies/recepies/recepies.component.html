@@ -1,0 +1,18 @@
+<div class="row">
+    
+    <div class="col-md-5 mt-2">
+        <app-recepie-list></app-recepie-list>
+    </div>
+    <div class="col-md-7 mt-4">
+
+        <!-- before routing -->
+        <!-- <div *ngIf="showSelectedRecepie; then recepieBlock else noBlock"></div>
+        <ng-template #recepieBlock>
+            <app-recepie-details [recepieDetailsReceived]="recepieDetails" ></app-recepie-details>
+        </ng-template>
+        <ng-template #noBlock>
+           <p>No recepie were added!</p>
+        </ng-template> -->
+       <router-outlet></router-outlet>
+    </div>
+</div>

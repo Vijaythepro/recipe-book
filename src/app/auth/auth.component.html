@@ -1,0 +1,37 @@
+<app-alert *ngIf="errorMessage" [message] ="errorMessage" (close)="onClose()"> </app-alert>
+<div class="row" style="margin-left: 20%;">
+    <div class="col-12">
+        <!-- <div class="alert alert-danger mt-4 col-6" *ngIf="errorMessage">
+            {{errorMessage}}
+        </div> -->
+        <form #authForm='ngForm' (ngSubmit)="onSubmitForm(authForm)" *ngIf="!showLoading">
+            <div class="row mt-4">
+                <div class="from-group ">
+                    <label for="email" class="form-label ">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" name="email" ngModel required email>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="form-group ">
+                    <label for="" class="form-lable ">Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" name="password" ngModel required minlength="7">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mt-4">
+                    <button class="btn btn-primary me-3" type="submit" [disabled]="!authForm.valid">{{ isLoginMode? "Log in" : "sign up"}}</button>
+                    <button class="btn btn-primary me-3" type="button" (click)="onSwitchMode()">Switch to {{ isLoginMode? "sign up": "log In"}}</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<div style="text-align:center; margin-top:20%">
+    <app-spinner *ngIf="showLoading"> </app-spinner>
+</div>

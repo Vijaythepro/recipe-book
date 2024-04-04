@@ -1,0 +1,38 @@
+<p>recepie-details works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="recepieDetailsReceived.imgPath" alt="" class="img-responsive" style="max-height:150px;">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{recepieDetailsReceived.name}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <!-- Example single danger button -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
+    Manage
+  </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" (click)="onManageClick($event)">Shopping list</a></li>
+                <li><a class="dropdown-item" (click)="onEditClick()" >Edit recipe</a></li>
+                <li><a class="dropdown-item" (click)="onDeleteClick()" >Delete recipe</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{recepieDetailsReceived.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingrideint of recepieDetailsReceived.ingredients">{{ingrideint.name}} -{{ingrideint.amount}}</li>
+        </ul>
+    </div>
+</div>
